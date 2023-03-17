@@ -1,0 +1,55 @@
+						Gerenciamento de pacotes RPM e YUM
+
+rpm -qa = Comando utilizado para listar todos os pacotes instalados na máquina.
+		rpm -qa |grep bash = Traz informações sobre tudo que achar relacionado ao bash.
+
+rpm -i = Comando utilizado para instalar um pacote em sistemas red hat like.
+		rpm -i pacote.rpm
+
+rpm -u = Comando utilizado para atulizar um pacote e caso você não tenha instalado na máquina, ele a instala.
+		rpm -u pacote.rpm
+
+rpm -qf = Com esse comando podemos saber qual foi o pacote que instalou determinado programa.
+		rpm -qf /etc/skel/.bashrc = Aqui estamos verificando qual foi o pacote que instalou o programa bash.
+
+rpm -e = Utilizado para excluir determinado pacote.
+		rpm -e pacote.rpm = Exclui um pacote por completo "de erase"
+
+rpm -V = Verifica a consistência do programa, caso não retorne nada é porque está tudo OK.
+		rpm -V bash = Aqui verificamos a consistência do programa "bash"
+		rpm --verify == rpm -V
+	Verify: Utilizado para verificar os arquivos de um pacote que instalei ou de todos pacotes do sistema.
+			- Principalmente verifica se mudou algo no conteúdo através do md5sum
+
+rpm -qpR - Verifica os pacotes requeridos para um determinado pacote.
+		rpm -qpR pacote.rpm = Comando utilizado para informar quais são os pacotes requeridos por esse pacote mesmo sem ainda 					estar instalado.
+
+/etc/yum.conf = Arquivo de configuração do yum.
+
+yum install = Comando utilizado para instalar um pacote e suas dependências.
+		yum install gcc = Aqui estamos instalando o gcc.
+
+yum update = Atualiza o repositório do sistema.
+
+yum upgrade = Atualiza os pacotes e desinstala os obsoletos.
+
+yum search = Pesquisa todos os pacotes na máquina de acordo com o parâmetro da pesquisa.
+		yum search samba = Aqui estamos procurando todos os arquivos com "samba" no nome.
+
+yum install --downloadonly = Aqui ele realiza somente o download do pacote e não instala automaticamente.
+				yum install --downloadonly samba = Aqui estamos somente realizando o Download do samba mas não 									instalando.
+
+/etc/yum.repos.d = Arquivo de repositório.
+
+
+dnf = Gerenciador de pacotes baseado no yum, já é padrão no Fedora!
+	Melhorias: Consumo de memória principalmente.
+
+dnf - i = Comando utilizado para realizar a instalação de um pacote.
+
+zypper = Gerenciador de pacotes da distribuições SUSE (se assemelha ao apt e ao yum)
+
+zypper refresh = Comando utilizado para atualizar o repositório.
+
+zypper update = Comando utilizado para atualizar todos os pacotes do sistema.
+

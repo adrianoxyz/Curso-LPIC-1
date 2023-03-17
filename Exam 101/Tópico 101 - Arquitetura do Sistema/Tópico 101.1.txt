@@ -1,0 +1,117 @@
+						Identificar e Configurar o Hardware
+
+BIOS: É onde configuramos ordem de boot, data e hora do sistema. BIOS é um Firmware da placa mãe que faz o gerenciamento dos periféricos conectados a ela.
+	POST: Power-On Self-Teste
+	Gerencia Dispositivos, IRQ, I/O, DMA, etc.
+	Inicia o processo de Boot
+	EFI (Extensible Firmware Interface)
+	UEFI(Unified EFI)
+
+IRQ: Interrupt Request
+	Sinal Enviado ao CPU
+	Não deve haver conflitos
+	/proc/interrupts
+	
+	Principais IRQ
+
+IRQ 1 - Teclado
+IRQ 3 - Porta Serial 2 (RS 232)
+IRQ 4 - Portal Serial 1 (RS 231)
+IRQ 14 - IDE Primária 
+IRQ 15 - IDE Secundária
+
+/proc/interrupts = Arquivo que mostra os IRQ que cada CPU recebeu.
+	cat /proc/interrupts
+
+Endereços I/O(E/S)
+	Lista de endereços de memória utilizadas para comunicação entre o CPU e os demais dispositivos de hardware.
+	/proc/ioports = Arquivo que guarda e exibe essa lista, utilizando juntamente do cat.
+
+DMA: Direct Memory Addressing
+	Um canal que permite que os dispositivos transmitam os dados diretamente para a memória, sem utilizar o cpu.
+	Não é utilizado por todos os dispositivos
+	/proc/dma
+
+Barramentos: Interface de comunicação física entre os dispositivos e a placa-mãe.
+PCI: Peripheral Component Interconnect
+	lspci = Comando que lista os dispositivos conectados através da entrada PCI.
+USB: Universal Serial Bus
+	lsusb = Comando que lista os dispositivos conectados através da entrada USB.
+		lsusb -s 001:001 = Mostra os detalhes de determinado dispositivo conectado ao barramento USB.
+
+
+					AS PARTIÇÕES VIRTUAIS
+
+/proc: Informações dos processos ativos e recursos de hardware.
+/sys: informações sobre os dispositivos de hardware (sysfs).
+/dev: referências aos dispositivos do sistema, inclusive de armazenamento (udev)
+
+udev: Device Manager.
+dbus/hald = Comunicação entre processos. Informa os processos a situação dos dispositivos de hardware.
+
+ColdPlug X HotPlug:
+ColdPlug = Precisa desligar a máquina para inserir um dispostivo e ele ser reconhecido.
+HotPlug = Pode ser inserido um dispositivo na máquina com ela em funcionamento.
+
+df = Comando que apresenta as partições do sistema.
+
+/proc/cpuinfo = Arquivo que guarda as informações de CPU da máquina.
+	cat /proc/cpuinfo = Aqui estamos exibindo o conteúdo deste arquivo citado.
+
+/proc = As informações que estão no diretório /proc estão sido lidos e utilizados em tempo de execução pelo Kernel.
+	/proc/cmdline = Parâmetros e argumentos que o bootloader passou pro Kernel quando estava iniciando a máquina.
+	/proc/mounts = Informações sobre as partições montadas do sistema.
+
+udev: É um processo que sempre está em execução e cria o mapeamento no sistema para os dispositivos, além de monitorar os dispositivos
+      conectados ao sistema.
+	udevadm monitor = Comando utilizado para monitorar os dispositivos conectados ao seu hardware.
+			  por ex: Caso rode o comando e tire o mouse USB ele irá disparar na tela a informação.
+
+
+(P)ATA: Também chamado de IDE que é referente a interface de conexão.
+
+Mapeados no LInux como:
+
+/dev/hda ou sda - master.
+/dev/hdb ou sdb - slave.
+/dev/hdc ou sdc - master.
+/dev/hdd ou sdd - slave.
+
+SATA: 1 disco por cabo.
+- Mais rápido que o PATA.
+
+Mapeados no Linux como:
+
+/dev/sda - Primeiro disco
+/dev/sdb - Segundo disco
+/dev/sdc - Terceiro disco
+
+
+dmesg = É um log gerado toda vez que "boota" a máquina, ou seja, sempre que é iniciado a máquina é gerado um log que é possível visualizar através do comando "dmesg"
+	dmesg | less = Aqui estamos verificando a saída paginada do comando dmesg.
+
+Módulos no Linux são necessários para o funcionamento de cada dispostivo, equivalente aos drivers do Windows.
+/lib/modules = Diretório onde ficam os módulos.
+	.ko = É a extensão dos módulos.
+Módulos podem ter dependência, necessita de outro módulo para funcionar.
+
+modinfo = Comando utilizado para verificar as informações de um determinado módulo.
+
+rmmod = Comando utilizado para remover um módulo que está carregado.
+		lsmod |grep mouse = Aqui estamos buscando o módulo do mouse afim de descobrir o endereço e o nome dele.
+		rmmod psmouse = Aqui estamos removendo o módulo do mouse carregado no sistema.
+
+insmod = Comando utilizado para inserir um módulo, mas para isso precisamos digitar o filename do módulo.
+		insmod filename.ko
+
+modprobe = Adiciona módulos e os módulos dependentes do módulo adicionado.
+		modprobe -r = Remove um módulo e suas dependências.
+
+/lib/modprobe.d = Dentro desse diretório tem um arquivo blacklist.conf, que é onde posso adicionar módulos que podem ser ignorados pelo sistema para não serem carregados, útil em caso de conflitos entre módulos ou bug em algum módulo.
+		#### DIRETÓRIO DE SISTEMA  #####
+
+/etc/modprobe.d = Diretório de Administrador de Sistema para adicionar os módulos a não serem carregados dentro do "blacklist.conf"
+
+
+
+

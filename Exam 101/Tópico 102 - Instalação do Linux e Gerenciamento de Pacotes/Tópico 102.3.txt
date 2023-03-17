@@ -1,0 +1,19 @@
+						Gerenciamento de Bibliotecas Compartilhadas
+
+Biblioteca Compartilhada: É quando uma aplicação faz referência a uma biblioteca que está externa a aplicação.
+	* Chama uma biblioteca externa e referência na aplicação.
+
+Biblioteca Estática x Biblioteca Dinâmica.
+
+Na biblioteca Dinâmica referencia a biblioteca utilizada e ela é carregada apenas uma única vez, podendo qualquer aplicação utilizar essa biblioteca.
+
+ldd = Comando utilizado para mostrar quais bibliotecas são utilizadas para determinada aplicação.
+	ldd /usr/bin/vi = Aqui nesse comando está sendo mostrado todas as bibliotecas utilizadas pelo vi.
+
+/lib e o /usr/lib = São dois diretórios onde o sistema sempre consulta para verificar as bibliotecas pelo ld.so
+
+ld.so.conf: Arquivo de configuração onde podemos adicionar as bibliotecas.
+
+LD_LIBRARY_PATH = De forma temporária podemos setar uma variável de ambiente para receber bibliotecas que devem ser consideradas entre as aplicações e o Linux.
+
+ldconfig -p = Comando que apresenta informações sobre todas as libraries do sistema inclusive a quantidade delas.

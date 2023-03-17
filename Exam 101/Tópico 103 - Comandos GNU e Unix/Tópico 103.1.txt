@@ -1,0 +1,73 @@
+
+						   Tópico 103.1
+
+date = Comando que exibe data e hora do sistema.
+
+echo = Comando que imprime na tela variável ou qualquer texto.
+	echo 'teste'
+
+type = Comando que exibe informações de um outro comando(se é interno, executável, shell builtin e etc)
+	type echo
+	type ls
+
+$PATH: é uma variável de ambiente do sistema, onde o shell busca os diretórios para executar um comando externo.
+
+pwd = comando que informa o diretório atual de onde 'você' está.
+
+Caminho relativo x Caminho absoluto: Quando se digita um caminho desde o '/' é um caminho absoluto.
+				     Quando se digita um caminho partindo do diretório atual é um caminho relativo.
+
+NOME_VARIAVEL=valor: Assim se declara uma variável de ambiente no Shell.
+	echo $NOME_VARIAVEL = É uma forma de imprimir o valor da variável.
+
+export= Comando utilizado para exportar uma variável, para que ela seja visível em todos os ambientes de bash.
+	export NOME_VARIAVEL
+
+set = Comando que exibe todas as variáveis do sistema.
+	set | less (para ter uma saída paginada)
+
+env = Comando que exibe as variáveis globais.
+	env | less (para ter uma saída paginada)
+
+$HISTFILE: Variável que armazena o histórico de comandos do sistema.
+
+$HOME: Variável que armazena o "home" do usuário local.
+	echo $HOME = /home/adriano
+
+PID: Process Identifier é uma identificação dentro do sistema do processo determinado.
+	$$ = Variável que armazena o PID do shell atual.
+	$! = Variável que armazena o PID do último processo executado em Background.
+
+exitcode: Sempre que um comando é executado com sucesso ele retorna 0.
+	  Sempre que um comando é executado com falha ele retorna algo diferente de 0.
+		echo $? = Comando utilizado para verificar o exitcode do último comando processado no sistema.
+		     $? = Variável que armazena o exitcode do último comando processado.
+
+~ = Variável que armazena o home do usuário atual.
+	echo ~
+
+Comandos sequenciais: São maneiras de executar vários comandos de forma sequencial.
+	date ; ls ; clear = Todos comandos serão executados em sequência.
+	ls /tmp && clear = Só executa o segundo comando, caso o primeiro seja executado com sucesso.
+	ls || clear= Só executa o segundo comando, caso o primeiro venha a falhar.
+
+history= Comando que lista todos os comandos executados no sistema.
+	history -c= Comando que limpa os comandos executados no sistema.
+
+man = Comando que abre o manual de referência de um outro comando.
+	man ls
+	man -k system information = Traz todos os comandos que tem alguma relação com o parâmetro.
+
+info = Comando para obter informações sobre um determinado comando.
+	info ls
+
+apropos = Comando de ajuda, onde passamos a descrição e ele traz os comandos que tenha relação.
+	apropos update system
+
+uname = Comando que apresenta informações do sistema.
+	uname -a = Mostra todas as informações do sistema.
+
+alias = É um comando utilizado para criar um atalho ou apelido para determinados comandos.
+	alias lt='ls /tmp' (dessa maneira estamos criando um atalho para o ls /tmp chamado de lt)
+
+which= Comando utilizado para encontrar comandos dentro do $PATH

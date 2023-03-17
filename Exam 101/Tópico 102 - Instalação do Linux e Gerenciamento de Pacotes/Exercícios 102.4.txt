@@ -1,0 +1,17 @@
+11. Faça o download do .deb do shell "ksh"
+	R = wget https://packages.debian.org/bullseye/ksh
+
+12. Instale o ksh usando o "dpkg"
+	R = dpkg -i ksh.deb
+
+13. Utilizando o apt-get ou o apt, instale o mysql-client
+	R = apt install mysql-client
+
+14. Utilizando o apt-get ou o apt, remova completamente a aplicação ksh
+	R = apt purge ksh
+
+15. Quantos "pacotes" há instalados em seu Linux?
+	R = apt list | wc -l 
+
+16. Quais as dependências da aplicação "bash" ?
+	R = 

@@ -1,0 +1,58 @@
+						O PROCESSO DE BOOT - BIOS
+
+1 - BIOS:
+- Localiza e Executa a MBR
+
+2 - MBR:
+- Master Boot Record
+- Executa o Bootloader
+- Localizado no primeiro setor do disco bootável
+	/dev/hda ou /dev/sda
+
+3 - Bootloader (GRUB/LILO):
+- Seleciona e Executa o Kernel e o initrd
+- Gerenciador de Boot: Tem a função de carregar o sistema operacional na memória.
+	Mais comuns: GRUB e o LILO.
+	
+4 - Kernel
+- Executa o /sbin/init
+
+5 - Init
+- Inicia os programas do runlevel/target definido
+- Inicia os serviços
+
+Tem a função de iniciar os primeiros processos e serviços do Linux.
+- É o processo de ID 1
+- Possui RunLevels ou Targets que definem diferentes modos de operação e o grupo de serviços que será iniciado.
+
+Principais INITs utilizados:
+
+- SystemV (SysV)
+- systemd
+- Upstart
+
+						O PROCESSO DE BOOT - UEFI
+
+UEFI é um Firmware que substitui a BIOS.
+
+UEFI:
+- Lê a partição ESP
+- Carrega o Bootloader específico
+
+Bootloader:
+- Seleciona e Executa o Kernel e o initrd
+
+Kernel:
+- Executa o /sbin/init
+
+Init:
+- Inicia os programas do runlevel/target definido
+
+						O PROCESSO DE BOOT - journalctl
+
+
+journalctl: Faz parte do systemd, responsável por fazer a coleta de logs do que está acontecendo no sistema, inclusive informações do Boot como o dmesg por exemplo.
+
+journalctl -b = Apresenta todos os logs referente aos processos de boot e serviços iniciados após o boot.
+
+journalctl -f = Monitora os logs do sistema em tempo real.

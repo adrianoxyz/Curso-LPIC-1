@@ -1,0 +1,64 @@
+							Linux e Virtualização
+
+Máquinas Virtuais x Containers
+
+Virtual Machine:
+
+  INFRAESTRUTURA (Cloud, Máquina)
+	\/
+  Sistema Operacional Host
+	\/
+  Hypervisor (Vmware, Virtualbox e etc)
+	\/
+  Virtual Machine
+
+################################
+
+Container:
+
+  INFRAESTRUTURA (Cloud, Máquina)
+	\/
+  Sistema Operacional Host
+	\/
+  Container Engine (Docker, Linux Container e etc)
+	\/
+  Container
+
+GUEST/DEVICE DRIVERS:
+
+- Instalados nas máquinas virtuais para melhor a performance e usabilidade do S.O Guest
+
+Exemplo:
+
+- Guest Additions (VirtualBox)
+- VMware Tools (VMware)
+
+Tipos de Virtualização:
+
+- Virtualização completa (HVM)
+	* A VM utiliza uma réplica do hardware virtualizado
+	* Não é necessário modificar o S.O do Guest
+	* Requer suporte da CPU
+
+- Paravirtualização (PV)
+	* Requer modificação do S.O do Guest (o S.O sabe que está em uma VM)
+	* O S.O Guest interage diretamente com o Hypervisor
+	* Não requer suporte da CPU
+	* Uso de paravirtual drivers. Exemplo: VirtIO (KVM), Xen
+
+IMAGENS:
+
+- Definição estática do que será o container após a inicialização.
+
+- Pode incluir o S.O, os softwares, bibliotecas, aplicações e etc.
+
+- Fotografias do ambiente.
+
+D-BUS MACHINE ID:
+
+- Usada para identificar o container ou a máquina virtual de maneira única.
+
+- /etc/machine-id
+
+- systemd-machine-id-setup --print
+

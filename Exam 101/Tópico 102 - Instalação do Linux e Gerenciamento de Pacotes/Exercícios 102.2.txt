@@ -1,0 +1,11 @@
+5. Qual o gerenciador de boot utilizado em sua instalação? Sendo GRUB, qual a versão?
+	R= update-grube --version
+
+6. Qual a versão do kernel que está sendo carregada por padrão em seu bootloader?
+	R= cat /boot/grub/grub.cfg
+
+7. Altere os seguintes parâmetros nas configurações de seu boot loader (faça um arquivo de backup antes de alterar)?
+
+Mude o tempo de timeout para 15 segundos
+
+Inclua no título da distribuição padrão a descrição " - Curso LPI 1"

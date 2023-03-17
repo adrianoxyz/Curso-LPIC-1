@@ -1,0 +1,2 @@
+5. Identifique pelos comandos do sistema o nome do arquivo kernel carregado durante o boot.
+	R = dmesg |grep kernel

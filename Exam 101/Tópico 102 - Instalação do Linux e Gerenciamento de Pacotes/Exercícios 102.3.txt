@@ -1,0 +1,8 @@
+8. Em sua instalação, quantas bibliotecas estão mapeadas no /etc/ld.so.cache?
+	R = ldconfig -p | head -n1
+
+9. Crie o diretório /home/<seuusuario>/libs/, em seguida copie  algumas das bibliotecas existentes no /lib/ para esse diretório, e  inclua esse diretório na base do ld.so.
+
+10. Quantas bibliotecas externas são utilizadas pelo programa "top"
+	R = whereis top
+		ldd /usr/bin/top | wc -l

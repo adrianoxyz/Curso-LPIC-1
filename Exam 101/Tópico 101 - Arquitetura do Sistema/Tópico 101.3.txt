@@ -1,0 +1,49 @@
+						Alterar os RunLevels, Shutdown e Reboot
+
+- SystemV (SysV) - Init Original
+	RunLevel - Nível de Execução do Sistema
+	cfg principal:
+		/etc/inittab
+	Diretório de scripts:
+		/etc/init.d
+			- Arquivos referentes aos serviços
+		/etc/rc.d
+
+- systemd - gerenciador de sistemas e serviços compatível com SysV
+	- Conceitos de Unidades(Units)
+	- Unidade = Nome.tipo (ex: http.service)
+	- /lib/system/systemd: Diretório que contém os arquivos de configuração das unidades/serviços.
+	- systemctl poweroff = Comando que também desliga a máquina.
+	- systemctl reboot = Comando que reinicia a máquina.
+	
+	- systemctl status cron.service = Aqui estamos verificando o status de um determinado serviço.
+	- systemctl stop cron.service = Aqui estamos parando um determinado serviço.
+	- systemctl start cron.service = Aqui estamos iniciando um determinado serviço.
+
+
+
+- Upstart - gerenciador de serviços substituto ao init, mas com opções de compatibilidade.
+		- Configurações em /etc/init
+
+
+runlevel = Comando utilizado para exibir o runlevel que o user atual está executando.
+
+init / telinit = São comandos utilizados para alterar runlevel e mudar de um para outro.
+
+shutdown = Comando que desliga e reinicia o sistema de maneira "organizada". Passa os sinais para os processos serem finalizados e só após isso desliga a máquina.
+	shutdown -c = Cancela o comando de desligar.
+	shutdown -r = Reinicia a máquina
+	shutdown -h = Desliga o Linux, mas não a energia da máquina.
+	shutdown -r +10 = Aqui estou agendando o restart da máquina para 10 minutos a frente.
+	poweroff = Desliga a máquina como o shutdown.
+
+wall = Comando utilizado para mandar uma mensagem para todos os usuários do sistema.
+		wall "teste" = Aqui envio a mensagem "teste" para todos usuários logados no sistema.
+
+
+ACPI: Gestão de Hardware da máquina no que tange a energia.
+	acpid = processo que monitora a utilização de energia da máquina.
+		ps axu | grep acpid
+
+acpi = Comando que mostra informações de energia da máquina.
+	acpi -v = Mostra todas as informações de energia da máquina.

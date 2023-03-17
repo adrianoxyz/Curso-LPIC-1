@@ -1,0 +1,61 @@
+					Criar, monitorar e encerrar processos
+
+PID = Process Identifier, é o número que identifica cada processo no sistema.
+
+PPID = Parent Process Identifier, é o processo pai de algum processo.
+	Hierarquia de processos.
+
+ps = Comando utilizado para verificarmos os processos executados no sistema.
+	ps -u = Um pouco mais de opções, modo de exibição do usuário.
+	ps aux = Os principais parâmetros para visualizarmos os processos em execução no sistema.
+	ps -u C google = Utilizando o -c eu listo as informações do processo google
+
+pstree = Lista os processos em forma de "arvore" respeitando a hierarquia de processos.
+		pstree -p = Mostra também o PID dos processos.
+
+pgrep = Lista os processo de acordo com o parâmetro passado.
+		pgrep bash = Mostra o PID dos processos com nome de bash.
+
+top = Comando que apresenta o monitoramento de desempenho e performance da máquina.
+	load average = Consumo médio da máquina (1 = Valor ótimo)
+	h = Mostra todas as opções do TOP.
+	k = Finaliza um processo, digitando após o k o PID da máquina.
+
+kill = Comando utilizado para enviar sinais para um processo.
+	kill -9 6345 = Aqui estamos encaminhando o sinal de finalizar o processo pela força bruta.
+	kill -l = Apresenta uma lista de todos os sinais que podem ser "passados" para um processo.
+
+killall = Comando utilizado para finalizar um processo mas baseado no nome e não mais no PID.
+		killall firefox = Finaliza todos os processos que tem firefox no nome.
+
+uptime = Comando que apresenta quanto tempo o sistema está ativo, sem desligar.
+
+free = Apresenta informações sobre a memória e o swap, somente o free apresenta em kb.
+	free -m = Apresenta em megabytes informações sobre a memória.
+		used = Apresenta a quantidade de memória alocada para uso.
+		free = Apresenta a quantidade de memória livre.
+		swap = Apresenta que já está utilizando a memória física, ou seja, a memória RAM topou.
+
+screen = Comando utilizado para criar novas "abas" de trabalho no bash.
+	ctrl + a = Cria uma nova aba
+
+foreground: São processos "rodando" em primeiro plano e com isso sua sessão fica presa a este processo.
+	firefox & = Dessa maneira startamos o processo em background acrescentando um & comercial no final.
+			ele apresenta o PID do processo na tela e a tarefa ou job.
+
+jobs = Comando utilizado para listarmos os processos que estão rodando em background ou bg.
+	jobs -l = Apresenta os processos em bg com seus PID's
+	fg = Comando para colocar um processo que está em background para foreground
+	bg = Comando para colocar um processo que está em foreground para background
+
+nohup = Comando utilizado para iniciar um processo que não aceita um sinal "hup" ou seja não finaliza seus processos caso perca conexão SSH por exemplo.
+	nohup firefox & = Iniciamos o processo em background e com nohup ativo.
+
+watch = Comando utilizado para executar um comando de 2s em 2s por padrão.
+	watch free -m = Aqui ele ficará atualizando o comando de 2s em 2s.
+	watch -n60 free -m = Aqui ele ficará atualizando o comando a cada 60segundos.
+
+tmux = Comando utilizado para criar uma nova janela de bash, se assemelha ao screen.
+	ctrl + b = Cria uma nova janela.
+	ctrl + b + % = Cria um novo painel onde podemos utilizar em uma segunda atividade.
+	

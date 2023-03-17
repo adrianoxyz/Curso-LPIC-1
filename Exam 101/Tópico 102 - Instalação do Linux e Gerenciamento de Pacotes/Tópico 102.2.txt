@@ -1,0 +1,39 @@
+						Instalação e Configuração do Boot Manager
+
+BIOS > MBR > Bootloader(GRUB/LILO) > Kernel > Init.
+
+Arquivos de configuração:
+
+- Grub Legacy:
+	/boot/grub/menu.lst
+
+- GRUB 2:
+	/etc/grub/grub.cfg (Arquivo que lê os arquivos que o administrador trabalha e o SO utiliza como referência)
+	/etc/default/grub (Onde Alteramos as configurações)
+	/etc/grub.d (Onde Alteramos as configurações)
+
+
+* Ao ligar a máquina, no virtualbox podemos teclar o F12 para entrarmos no modo de interação do GRUB.
+* Caso não apertemos nenhuma tecla o GRUB irá carregar o default setado.
+* Podemos selecionar outros tipos de Boot na tela do GRUB para realizarmos algum tipo de manutenção no sistema.
+
+quiet: Parâmetro para que não seja mostrado as informações do Boot na tela.
+splash: Parâmetro para que seja mostrado as informações do Boot na tela.
+
+/boot/: Diretório onde encontramos imagem dos kernels do sistema.
+
+update-grub --version = Comando que apresenta a versão do GRUB sendo utilizada no sistema.
+
+update-grub = Comando utilizado para atualizar o grub.
+
+* A instalação do grub é realizada no MBR para evitar problemas é necessário realizar o backup do sda (partição do disco).
+	dd if=/dev/sda of=copia.mbr bs=1 count=512
+		Aqui estamos realizando a cópia da partição sda utilizando o comando dd que realiza a cópia byte a byte.
+			a cópia se chamando "copia.mbr" copiando os primeiros 512bytes 1 a 1 com o parametro count e bs.
+
+	
+
+
+
+
+

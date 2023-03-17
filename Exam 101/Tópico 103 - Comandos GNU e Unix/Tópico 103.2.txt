@@ -1,0 +1,78 @@
+						Filtros, Textos e Arquivos.
+
+cat = Comando utilizado para ler arquivos de texto.
+	cat teste.txt = Exibe o conteúdo do texto "teste.txt" na tela
+	cat -A = Apresenta caracteres especiais que existem no arquivo.
+	cat -b = Exibe o conteúdo de um arquivo sem considerar as linhas em branco.
+
+tac = Comando que é o inverso de cat, imprime o arquivo de trás para frente.
+	tac teste.txt
+
+head = Comando que exibe o cabeçalho do arquivo, por padrão as 10 primeiras linhas.
+	head -n3 teste.txt = Dessa forma com o parâmetro -n, ele imprime a quantidade de linha que deseja.
+	head -c teste.txt = Imprime os 100 primeiros bytes.
+
+tail = Comando que exibe as últimas primeiras linhas de um arquivo, por padrão as 10 ultimas.
+	tail -n5 = Dessa maneira imprime as ultimas 5 linhas.
+	tail -f = Fica atualizando em tempo real as últimas linhas (ideal para verificação de logs em tempo real)
+
+less = Comando para imprimir texto de um arquivo de maneira paginada, ideal para arquivos longos.
+	less arquivolongo.txt
+	/Teste = Dentro da navegação, utilizo o barra para buscar uma palavra.
+
+|(pipe) = Redireciona a saída do primeiro comando e joga para o segundo comando.
+	cat arquivo.txt | grep teste = Estou buscando a palavra teste.
+
+wc = Comando para verificar a quantidade de linhas, palavras ou caracteres de um arquivo.
+	wc -l arquivolongo.txt = Comando para verificar a quantidade de linhas de um arquivo.
+	wc -w arquivolongo.txt = Comando para verificar a quantidade de palavras de um arquivo.
+	wc -c arquivolongo.txt = Comando para verificar a quantidade de palavras de um arquivo.
+
+nl = Comando que numera as linhas de um arquivo sem considerar as linhas em branco.
+
+sort = Comando que serve para exibir um arquivo em ordem alfabética.	
+	sort -r = Exibe de forma reversa, ao contrário.
+	sort -k = Ordena os arquivos em ordem alfabética pelo segundo campo.
+
+uniq = Comando que exibe o conteúdo de um arquivo sem repetição, caso esteja ordenado.
+	então primeiro podemos ordenar e exibir com o uniq.
+		sort arquivo.txt | uniq
+
+od = Exibe o conteúdo de um arquivo em formato octal, hexadecimal e em outras opções.
+	od arquivo.txt
+	od -tx arquivo.txt = Exibe em hexadecimal
+
+join = Comando utilizado para juntar dois arquivos por um índice.
+	join alunos.txt notas.txt = Ele irá exibir na tela o conteúdo de alunos e a frente o conteúdo de notas como um 				    indice.
+
+paste = Comando utilizado para juntar dois arquivos linha a linha.
+	paste alunos.txt notas.txt = Pega a linha 1 do arquivo 1 e junta com a linha 1 do arquivo 2.
+
+split = Comando que quebra um arquivo em vários outros arquivos de acordo com a quantidade de linha que queira.
+	split -l20 = A cada 20 linhas ele cria um novo arquivo... ele "splita" um novo arquivo.
+	split -l20 arquivolongo.txt novo_arquivo = Aqui ele cria novos arquivos a cada 20 linha com um nome pré-definido.
+
+tr = Comando que serve para substituir caracteres, textos ou até mesmo excluir.
+	cat texto.txt | tr a-z A-Z = Aqui ele pega todas as letras minusculas e substitui por maiúsculas.
+	cat texto.txt | tr -d A = Aqui com o parâmetro -d ele irá excluir sempre que encontrar um A maiúsculo.
+	tr -s = Ele retira repetições de um conteúdo.
+		echo 'Liiiiiinux' | tr -s i = Ele retira todos os i repetidos.
+
+cut = Comando utilizado para recortar partes de um texto, por campos, caracteres e etc.
+	cut -c = Para recortar caracteres
+	cut -b = Para recortar por bytes.
+	cut -d = Para definir um delimitador.
+	cut -f(mais utilizada) = Serve para recortar por campos.
+
+sed = Comando utilizado bastante com expressões regulares, principalmente para substituir conteúdo e também excluir.
+	sed '/s/Ana/Maria' texto.txt = Aqui ele está substituindo o 'Ana' por 'Maria'
+	sed '3,5 d' texto.txt = Aqui estamos apagando da linha 3 a linha 5 do arquivo.
+
+file = Comando utilizado para verificarmos do que se trata determinado arquivo.
+	file teste.sh = Aqui ele informará do que se trata esse arquivo, qual o seu tipo.
+
+xz -k / bzip2 -k / gzip -k = Todos esses comandos servem para compactar arquivos.
+xzcat / bzcat / gzcat = Comandos utilizados para lê o conteúdo de um arquivo compactado, de acordo com seu algoritmo utilizado.
+
+checksums: Checksum é um procedimento para verificação de integridade e autenticidade de um determinado arquivo.
+	   os algoritmos mais comuns de checksum são o MD5 e o SHA256.

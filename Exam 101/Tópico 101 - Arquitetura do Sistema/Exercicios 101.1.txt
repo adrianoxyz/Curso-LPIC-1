@@ -1,0 +1,30 @@
+101.1 Identificar e Configurar o Hardware
+
+1. Verifique as seguintes informações referentes aos dispositivos de hardware de sua máquina:
+
+Nome do dispositivo de áudio/multimídia que está sendo utilizado
+
+
+O IRQ utilizado pelo dispositivo de áudio/multimídia
+	R = cat /proc/interrupts
+
+Quantidade de devices conectados em seu barramento USB
+	R = lsusb
+		3 devices
+
+Nome do modelo da(s) CPU(s) utilizadas
+	R = cat /proc/cpuinfo
+		
+
+Como o dispositivo de armazenamento foi mapeado em seu Linux (sda, sdb, hda, hdb)
+	R = dmesg |grep sda
+
+2. Quais as dependências do módulo "snd"
+	R = modinfo snd	
+
+3. Carregue o módulo batman-adv em seu sistema Linux, verifique se o mesmo foi corretamente carregado e em seguida descarregue-o.
+	R = modprobe batman-adv
+		modprobe -r batman-adv
+
+4. Quais as vantagens do uso do modprobe no lugar do insmod e rmmod?
+	R = modprobe além de adicionar o módulo e também poder remover, ele adiciona as dependências que o módulo exige para o funcionamento.

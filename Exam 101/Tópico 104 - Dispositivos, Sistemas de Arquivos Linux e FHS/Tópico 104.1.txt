@@ -1,0 +1,71 @@
+					104.1 - Criando Partições e Sistema de Arquivos
+
+
+fdisk = Comando utilizado para gerenciar partições. (Criar e Excluir) | Necessário estar como root.
+	fdisk -l = Comando utilizado para listar partições.
+
+fdisk /dev/sdb = Aqui estou selecionando o disco /sdb para trabalhar através do fdisk.
+			n = cria uma nova partição.
+			p = lista as partições.
+			w = para salvar e sair.
+			q = para sair sem salvar.
+
+
+gdisk = Similiar ao fdisk porém só trabalha com partições GPT
+			n = cria uma nova partição.
+
+
+Tipos de FILESYSTEMS:
+
+Journal:
+
+- ext3: ext2 com journal
+- ext4: Melhoria do ext3
+- XFS: Criado pela SGI para o IRIX
+- JFS: Criado pela IBM
+- ReiserFS: Melhor performance com pequenos arquivos.
+- Brtfs: Desenvolvido inicialmente pela Oracle.
+
+Não tem Journal:
+
+ext2: Original do início do Linux
+VFAT: Utilizados em sistemas Windows
+
+journal = Espécie de log de registros de atividades em disco.
+
+mkfs = Comando utilizado para definir o tipo de filesystem em uma determinada partição.
+		mkfs -t ext3 /dev/sdb1 = Aqui estamos definindo na partição sdb1 o filesystem ext3.
+
+file -s = Comando utilizado para verificar o tipo de filesystem na partição.
+		file -s /dev/sda1 = Aqui estamos verificando a partição no sda1	
+
+parted = Comando similar ao fdisk, porém com mais opções, como por exemplo aumentar o tamanho de uma partição.
+
+gparted = Comando utilizado para iniciar o parted porém de forma gráfica.
+
+Btrfs - B-tree File System: Filesystem moderno em constante desenvolvimento.
+			    Foco em tolerância a falhas e facilidade de administração e reparo.
+			    Desenvolvido por um grupo de empresas: Oracle, Red Hat e etc
+			    Usado pelo facebook, TripAdvisor, OpenSUSE, etc.
+			    Suporta RAID 0,1,10 (5 e 6 em desenvolvimento)
+
+exFAT - Extended FAT, ou FAT64: Sistema de arquivos otimizados para pen drives/flash drives e cartões de memória.
+				Intermediário entre o FAT e o NTFS.
+				Mais simples e leve que o NTFS.
+				Permite arquivos maiores que o FAT.
+				No FAT o limite é 4GB, no exFAT é 16EB.
+				No Linux é implementado pelos pacotes exfat-fuse e exfat-utils.
+
+df = Comando que apresenta as principais partições e onde elas estão montadas.
+	df -h = Apresenta informações das partiçoes, porém de uma forma mais fácil de ler, apresenta em MB.
+	df -h /dev/sda2 = Apresenta informações espeficamente da partição /dev/sda2.
+	df -T = Apresenta as partições e o seu tipo de filesystem.
+
+du = Comando que apresenta informações das partições de forma mais profunda, por exemplo: Apresenta quanto de uso cada arquivo está utilizando dentro dos diretórios.
+	du -ah = Apresenta quanto cada diretório está consumindo de armazenamento.
+	du -c = Apresenta dentro do diretório quanto está sendo utilizado e no final a soma de tudo.
+	du -sh /var = Aqui estamos verificando o quanto de uso o diretório /var está consumindo de armazenamento.
+
+inode: É um indice onde cada arquivo tem o seu.
+	ls -li = Lista os arquivos do diretório e os seus respectivos inodes.
+

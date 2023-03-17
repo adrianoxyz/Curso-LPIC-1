@@ -1,0 +1,5 @@
+20. Gere um comando que exiba na tela todas as linhas do arquivo /etc/passwd que terminem com "nologin" 
+		R = grep nologin /etc/passwd > saida_gre_nologin.out
+
+21. Crie um comando que liste todos os arquivos do diretório /etc/ que contenham a palavra "eth0" em seu conteúdo,  não no nome do arquivo.  A pesquisa deve incluir também os subdiretórios. Apenas o nome e  caminho do arquivo deve ser exibido.
+		R = ls -la /etc |grep eth0

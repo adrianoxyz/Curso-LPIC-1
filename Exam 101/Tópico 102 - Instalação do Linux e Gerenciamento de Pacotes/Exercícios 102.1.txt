@@ -1,0 +1,11 @@
+1. Em sua máquina Linux, quais as partições e os respectivos pontos de montagem de cada uma delas.
+	R = df -h podemos visualizar as partições e os pontos de montagem.
+
+2. Qual o tamanho de sua área de swap.
+	R = cat /proc/swaps - Visualizando esse arquivo podemos obter informações sobre a área de swap.
+
+3. Por que diretórios como /bin, /sbin e /etc não podem ser montados fora da partição / ?
+	R = Porque necessitam de estar dentro do / pois precisam ter acessos a comandos e configurações residentes nesse diretório e com isso precisam de ser montados juntos.
+
+4. Em um sistema que utiliza UEFI, como pode ser identificada a partição em que está montado o ESP?
+	R = df /boot/efi - Podemos visualizar a partição que está montado o ESP.

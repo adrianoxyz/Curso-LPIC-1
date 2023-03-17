@@ -1,0 +1,23 @@
+1. Encontre as seguintes informações sobre a sua instalação Linux:
+
+O caminho completo do arquivo .bash_history para o seu usuário;
+
+O release do kernel instalado
+	R=uname -r
+Os diretórios incluídos em seu PATH
+	R=echo $PATH
+O hostname da máquina
+	R=hostname
+
+O PID da sua sessão shell atual
+	R=echo $$
+
+A localização do comando tar
+	R= which tar
+
+2. Crie e exporte uma variável chamada "NOME" que contenha o seu nome completo.
+	NOME='Adriano Windson Souza Lima'
+	export NOME
+
+3. Crie um comando que escreva na tela a seguinte frase: "O Conteúdo da Variável $NOME é: <Valor da Variável NOME>"
+	R= echo O Conteúdo da Variável \$NOME é: $NOME

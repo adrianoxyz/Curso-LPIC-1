@@ -1,0 +1,7 @@
+103.6 Modificar a Prioridade de Execução de Processos
+
+18. Inicie o mesmo comando aplicado no exercício 16, porém com a menor prioridade possível.
+	R = nice -n -20 firefox &
+
+19. Altere o NICE do processo "rsyslogd" para o valor -10.
+	R = renice -n -10 546

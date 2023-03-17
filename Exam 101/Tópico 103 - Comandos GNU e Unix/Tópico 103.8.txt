@@ -1,0 +1,21 @@
+					Edição básica de arquivos vi/vim
+
+vi é um editor de texto que vem como padrão em todas as distros linux, já o vim é a evolução do vi que deve ser instalado pelo gerenciador de pacotes do seu SO.
+	apt-get install vim
+	yum install vim
+
+i = Tecla de inserção ou edição do vim.
+o = Tecla de inserção ou edição do vim.
+esc = Tecla que saí da tela de inserção ou edição.
+cc = Coloca o cursos em cima de uma linha e apertando cc, ele recorta essa linha cc=cut.
+p = insere um conteúdo copiado ou recortado.
+:w = salva e continua no arquivo.
+:q = sai do arquivo sem salvar.
+:wq! = salva e sai do arquivo.
+
+nano e emacs = São dois editores de texto do Linux.
+	emacs provavelmente deverá ser instalado.
+	nano provavelmente já vem instalado em sua distribuição.
+
+Definir editor padrão: 
+	select-editor = Comando utilizado para selecionar o editor padrão do sistema.

@@ -1,0 +1,58 @@
+					Gerenciamento Básico de Arquivos
+
+/ = É o ponto inicial da estrutura de diretórios do Linux.
+
+cd = Comando utilizado para navegar entre os diretórios do Linux.
+	cd .. = volta um diretório
+
+pwd = Comando que mostra o diretório no qual você se encontra no momento.
+
+ls = Lista os arquivos dentro de um diretório.
+	ls -a = Lista também os arquivos ocultos.
+	ls -lR = Lista de forma recursiva, ou seja, o que estiver dentro de outro diretório também será listado.
+	ls -l Aul* = Tudo que se inicia com "Aul" será listado, o asterisco serve como curinga.
+	ls -l Aula[123] = Irá listar todos os arquivos com o nome... Aula1, Aula2 e Aula3.
+
+file = Comando que analisa do que se trata determinado arquivo.
+	file alunos.txt = Aqui ele verificará e retornará do que se trata o arquivo "alunos.txt"
+
+cp = Comando utilizado para copiar um arquivo para um outro local, realizar uma cópia de um arquivo.
+	cp nome.sh /tmp/ = Aqui estou copiando o arquivo nome.sh para o diretório /tmp/
+	cp -v nome.sh /tmp/ = Aqui ele copia, mas antes disso pede para confirmar a ação.
+	cp -r nome.sh /tmp/ = Aqui ele copia de forma recursiva, tudo que está dentro do diretório e sub-diretórios.
+
+mv = Comando utilizado para mover um arquivo (como se recortasse), ou também serve para renomear um arquivo.
+
+touch = Serve para criar um arquivo em branco ou atualizar data e hora de modificação de um arquivo.
+	touch file.txt = Cria um arquivo com esse nome caso ele não exista, e se por ventura ele já existir atualiza para data e hora atual.
+
+rm = Comando utilizado para apagar arquivos dentro do sistema.
+	rm -i = Aqui ele pede para confirmar antes de apagar qualquer coisa.
+	
+
+mkdir = Comando utilizado para criar diretórios.
+	mkdir -p = Ele cria diretório dentro de diretório... uma estrutura de diretório.
+
+rmdir = Comando utilizado para apagar diretórios vazios.
+	rmdir -p = Apaga diretórios mesmo com conteúdo.
+
+find = Comando utilizado para procurar arquivos.
+	find /home -name Aula.txt = Aqui ele procura dentro do diretório /home pelo nome.
+	find /home -user adriano -name Aula = Aqui ele procura pelo arquivo, cujo user é Adriano.
+
+tar cxt = C= Criar arquivo de Backup / X = Executar / T = Listar.
+	Comando utilizado para criar arquivos de backup (comprimir).
+	Antes de compactar, precisamos comprimir com o tar.
+	tar cpvf script.tar nome* = Aqui estamos compactando tudo que começa com "nome" e criando um arquivo script.tar
+
+gzip, bzip2, xz = São metódos de compactação e cada um deles descompactam com um comando específico.
+	É possível na entrada do tar já comprimir e após compactar, basta entrar com:
+	tar jcvpf script.tar nome* = Irá comprimir e compactar com bzip2 tudo que começa com
+	nome.
+
+cpio = Comando parecido com o tar porém com o fluxo diferente.
+	find /home -name nome* | cpio -o >backup.cpio
+
+dd = Comando utilizado para copiar uma partição inteira, copiando byte a byte.
+	dd if=/dev/sr0 of=imagem.img  (Aqui estamos copiando a partição pra um arquivo de imagem, mas poderia ser para outra partição por exemplo.)
+	

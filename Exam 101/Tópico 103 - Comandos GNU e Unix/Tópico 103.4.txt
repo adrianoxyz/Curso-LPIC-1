@@ -1,0 +1,21 @@
+					Fluxo, Pipes e Redirecionamentos
+
+stdin = Entrada padrão identificada como (0)
+stdout = Saída padrão identificada como (1)
+stderr = Saída com erro... qualquer saída diferente de (1)
+
+redirecionamento > = Joga a saída de um comando pra um arquivo, caso o arquivo já exista, sobrescreve o conteúdo.
+
+redirecionamento >> = Joga a saída de um comando para um arquivo, caso o arquivo já existe, insere no final do conteúdo.
+
+redirecionamento 2> = Joga a saída de erro de um comando para um determinado arquivo.
+
+pipe : | = Pega a saída do primeiro comando para o segundo comando e assim por diante.
+	sort alunos.txt | uniq | wc -l = Ordenou o arquivo, deixou única as linhas repetidas e por último contou a qtd de linhas.
+
+tee = Comando utilizado para redirecionar a saíde um comando para um arquivo e ao mesmo tempo exibir na tela.
+	cat /etc/passwd |grep adriano | tee resultado.out
+
+$(uname -r) = Uma forma de exibir o resultado de um comando com o echo, bastante utilizado em shell script.
+		echo "o kernel e: " $(uname -r)
+

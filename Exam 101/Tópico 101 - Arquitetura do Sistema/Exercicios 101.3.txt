@@ -1,0 +1,17 @@
+101.3 Alterar os RunLevels, Shutdown e Reboot
+
+6. Identifique se a sua instalação Linux está utilizando SysV, systemd ou upstart.
+		R = ps -p 1
+
+7. Identifique o runlevel ou target padrão em seu sistema de inicialização SysV ou systemd.
+
+
+8. Em um sistema systemd, identifique a quantidade de targets existentes.
+
+
+9. Em um sistema com systemd, verifique se o serviço cron está sendo iniciado por padrão no target default. Se não estiver, faça com que  seja, se estiver, desabilite.
+		R = systemctl status cron.service
+
+10. Informe pelo menos 3 comandos diferentes para reiniciar uma máquina Linux.
+	shutdown -r
+	systemctl reboot

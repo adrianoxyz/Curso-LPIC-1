@@ -1,0 +1,18 @@
+15. Preencha as informações abaixo com os dados de sua instância Linux:
+
+Total de Memória RAM utilizada (em MB):
+	R = free -m ou top (969mb)
+Load Average (Média dos Últimos 5 minutos): 
+	R = 0,02 0,01 0,00
+Quantidade de Processos em Execução: 
+	R = top (17 processos em execução)
+PID dos 3 processos que estão utilizando mais Memória:
+	R= top (9,5mb | 1,1mb | 0,5mb)
+PPID (Parent Process ID) dos 3 processos com maior tempo de Uso de CPU: 
+	R= 
+
+16. Crie um comando, que gere um arquivo chamado ~/LPI1/Exercicios/resultado-top.out, que contenha a saída do comando  top, atualizado a cada 10 segundos, sendo executado indefinidamente até  que o processo seja morto. O comando deve rodar em background.
+	R = watch -n10 top & > resultado-top.out
+
+17. Envie um sinal de SIGKILL para o processo iniciado no exercício 16.
+	R = kill -9 2132

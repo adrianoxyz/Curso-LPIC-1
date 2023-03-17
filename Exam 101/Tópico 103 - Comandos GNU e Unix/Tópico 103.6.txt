@@ -1,0 +1,12 @@
+						Modificar a prioridade de execução dos processos
+
+nice = Abreviado no comando "top" como NI é a prioridade que um processo tem em execução no sistema.
+	os valores de um processo tem um range de -20 até o +19. Somente o root tem possibilidade de aumentar a prioridade de um 	processo.
+	
+	Menor Valor = Mais prioridade. (negativo = MAIOR PRIORIDADE)
+	Maior Valor = Menos prioridade. (positivo = MENOR PRIORIDADE)
+	
+	nice -n15 firefox & = Aqui estamos iniciando um firefox em background com um nice (prioridade de -15)
+
+renice = Comando utilizado para alterar o nice de um processo.
+	renice -n8 20509 = Altera o nice de um processo em execução no sistema para -8.

@@ -1,0 +1,16 @@
+					Pesquisar Arquivos de Texto com Expressões Regulares
+
+grep -c = Conta quantas ocorrências foram encontradas no texto.
+		grep -c Linux texto.txt
+
+grep -v = Mostra todas as linhas menos a do parâmetro passado, por ex:
+	grep -v Linux texto.txt = Vai mostrar todas as linhas que não contenha a palavra "Linux"
+
+egrep = busca um conteúdo por expressão regular.
+		egrep "b[aei]g" texto.txt = Busca um conteúdo que comece com b e termine com g e tenha "aei" entre o texto.
+		egrep "^Linux$" texto.txt = Aqui ele mostra o conteúdo sempre que a palavra Linux estiver no inicio da linha.
+
+sed = Comando utilizado principalmente para substituir ou deleter, palavras ou linhas.
+	sed '/Linux/d' texto.txt = Aqui toda vez que encontrarmos a palavra Linux iremos deleter essa palavra.
+	sed 's/Linux/Windows/ texto.txt = Aqui toda vez que encontramos a palavra Linux, substituitmos por Windows.
+

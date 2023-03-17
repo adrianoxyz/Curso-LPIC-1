@@ -1,0 +1,76 @@
+						GERENCIAMENTO DE PACOTES
+
+Padrão Debian: 
+
+Arquivos: .deb
+
+Gerenciador de pacotes: dpkg
+
+Gerenciador + Repositório: apt-get
+	Repositório: Uma lista de fontes onde o sistema encontra os pacotes e os instala e automaticamente já instala as dependências.
+
+
+Padrão RPM/RedHat:
+
+Arquivos: .rpm
+
+Gerenciador + Repositório: yum
+	Repositório: Uma lista de fontes onde o sistema encontra os pacotes e os instala e automaticamente já instala as dependências.
+
+
+						Conceitos Importantes
+
+* Cada sistema deve usar um sistema de gerenciamento único.
+
+* Um pacote é um conjunto de arquivos relacionados a uma aplicação:
+	- Executáveis, cfgs, bibliotecas, manuais, etc, além de informações sobre dependências.
+
+* Os gerenciadores de pacotes mantém uma base de dados relacionando todos os pacotes, seus arquivos e dependências.
+
+dpkg -l = Comando que lista todos os pacotes instalados.
+
+dpkg -i = Comando que instala um pacote que já esteja localmente na máquina.
+		dpkg -i ksh.deb = Aqui estamos instalando o pacote ksh
+
+dpkg -I = Comando que apresenta informações sobre um pacote.***I maiusculo***
+
+dpkg -s = Comando que apresenta status sobre determinado pacote (por exemplo se está instalado ou não).
+
+dpkg -r = Comando utilizado para remover um determinado pacote, mas mantém as informações na base de dados.
+
+dpkg -P ou dpkg --purge = Ele remove definitivamente e exclui as informações da base de dados.
+
+### Comandos do APT ele consulta um repositório onde verifica os pacotes que queremos instalar ou removê-los. ###
+
+- Procura o pacote correto.
+- Procura as dependências do pacote.
+- Faz o Download
+- Instala tudo.
+
+/etc/apt/sources.list = Arquivo que contém as fontes de origem onde o apt busca os pacotes e faz o Download.
+
+apt update = Comando para atualizar as fontes de origem do arquivo sources.list
+
+apt upgrade = Comando que verifica todos os softwares instalados em sua máquina, consulta os fontes e faz o Download da versão mais 		atual.
+
+apt dist-upgrade = Comando que atualiza os softwares mas uma versão inteligente, consultando se há algum conflito no sistema e 			evitando. 
+
+apt-get install pacote = Comando utilizado para instalar pacotes. (Não há necessidade de informar versão do pacote e etc)
+
+apt purge pacote = Limpa o pacote, dependências e histórico (Desinstalação completa).
+
+apt remove pacote = Remove o pacote mas mantém as dependências.
+
+dpkg -reconfigure = Serve para refazer a configuração de um determinado pacote.
+	dpkg -reconfigure tzdata = Aqui estamos utilizando o -reconfigure para reconfigurar o time zone.
+
+dselect = É um comando para abrir um menu, para instalar e remover pacotes.
+
+alien = Comando utilizado para manipular pacotes que não são .deb (converte .rpm para .deb - .tgz para .deb) e até mesmo instalar os 	pacotes rpm em sistemas debian. 
+		alien -i pacote.rpm = Comando utilizado para instalar um pacote .rpm em um sistema debian.
+
+apt search pacote = Ele busca no sistema tudo que tem relação com o nome do pacote.
+
+apt show pacote = Mostra os detalhes do pacote.
+
+apt list pacote = Busca o pacote no sistema.
