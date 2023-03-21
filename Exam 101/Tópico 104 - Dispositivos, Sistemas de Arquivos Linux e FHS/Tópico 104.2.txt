@@ -1,0 +1,11 @@
+					Tópico 104.2 - Mantendo a Integridade FSs
+
+fsck = Comando filesystem check é utilizado para verificar as partições e fazer uma correção necessária em relação a inconsistências e etc. (só funciona caso a partição não esteja montada).
+	fsck /dev/sda2 = Aqui estamos fazendo a verificação do filesystem na partição /dev/sda2.
+
+tune2fs = É um comando utilizado para alterar os parâmetros relacionados ao gerenciamento do filesystem.
+		tune2fs -i 1m /dev/sda1 = Aqui estamos alterando a verificação do filesystem para a cada 1 mês.
+		dumpe2fs = Comando utilizado para atualizar após a alteração com o tune2fs.
+
+xfs_repair = É um comando utilizado para identificar falhas no disco e corrigi-las, similar ao fsck.
+		xfs_repair /dev/sdb1 = Aqui estamos buscando falhas na partição /dev/sdb1 visando corrigi-las.

@@ -1,0 +1,18 @@
+				Controle de Montagem e Desmontagem de FSs - mount, umount, /etc/fstab
+
+Ponto de montagem é o diretório que será associado a partição montada.
+
+mount = Comando utilizado para montar uma partição de maneira temporária.
+	mount = Apresenta tudo que está montado no sistema.
+	mount /dev/sdb2 /tmp/teste_mount = Aqui estamos montando a partição /dev/sdb2 dentro do diretório /tmp/teste_mount.
+	
+
+umount = Comando utilizado para desmontar uma partição.
+		umount /dev/sd2 = Aqui estamos desmontando a partição recém criada.
+
+/etc/fstab = Arquivo onde o Kernel busca para identificar quais partições devem ser montadas.
+
+UUID: É um identificador único de dispositivo e cada filesystem tem seu UUID.
+
+no /etc/fstab: é possível definirmos que toda vez que dermos boot na máquina, podemos configurar o fsck para corrigir possíveis erros de filesystem.
+

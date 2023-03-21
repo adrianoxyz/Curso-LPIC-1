@@ -1,0 +1,7 @@
+5. Em sua instalação Linux, veja qual a porcentagem de uso atual da partição em que está montado o /.
+	R = df -h /
+		(64% em uso).
+
+6. Em sua instalação Linux, analize o diretório /var e veja qual subdiretório está consumindo mais espaço em disco.
+	R = du -h /var |more
+		(/var/lib/snapd)
