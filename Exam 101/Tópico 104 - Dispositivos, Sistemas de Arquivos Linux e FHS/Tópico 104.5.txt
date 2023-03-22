@@ -1,0 +1,36 @@
+					104.5 Gerenciando Permissões e Propriedades de Arquivos
+
+Grupo: Conjunto de usuários.
+	Todo arquivo terá um usuário dono e um grupo associado a este arquivo.
+
+Inodes: Todo arquivo e diretório tem um registro de inode.
+
+rw-r--r-- 1 lpi1 lpi1 Script_Exemplo.sh -> Nesse arquivo o usuário "lpi1" tem permissão de leitura e escrita.
+							 o grupo "lpi1" tem permissão de leitura.
+							 outros usuários tem permissão de somente leitura.
+
+r = read(leitura)
+w = writte(escrita)
+x = execute(execução)
+
+
+					Alterando Permissões
+
+Alvo + Operação + Permissão
+
+u - user(usuário)
+g - group(grupo)
+o - others(outros)
+a - all(todos acima)
+
+chmod g-w arquivo.out = Aqui estamos removendo a permissão do grupo de escrita.
+chmod a+x arquivo.out = Aqui estamos dando permissão de execução para todos.
+chmod ug+x arquivo.out = Aqui estamos dando permissao de execução para usuário e grupo.
+
+chmod u+x nome.sh = Aqui estamos adicionando permissão de execução para user no arquivo nome.sh
+ou
+chmod u=x nome.sh = Aqui estamos adicionando permissão de execução para user no arquivo nome.sh
+
+
+
+

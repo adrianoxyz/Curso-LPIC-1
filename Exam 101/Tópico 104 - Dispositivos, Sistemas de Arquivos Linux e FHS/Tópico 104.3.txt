@@ -16,3 +16,13 @@ UUID: É um identificador único de dispositivo e cada filesystem tem seu UUID.
 
 no /etc/fstab: é possível definirmos que toda vez que dermos boot na máquina, podemos configurar o fsck para corrigir possíveis erros de filesystem.
 
+blkid = Comando utilizado para trazer todas informações das partições (UUID, Label e etc).
+
+lsblk = Comando parecido com o blkid, porém com informações diferentes.
+	lsblk -f = Traz todas as informações do lsblk + UUID.
+
+mount = Só pode ser utilizado pelo usuário root / Caso não seja o usuário root, podemos apontar no arquivo /etc/fstab por ex:
+		/dev/sda3 /mnt/teste1 -> no arquivo /etc/fstab
+
+systemctl list-unit --type=mount = Aqui estamos utilizando o systemctl para listar os pontos de montagem do sistema.
+				   - Os pontos de montagens são visto como units dentro do sistema pelo systemctl.
