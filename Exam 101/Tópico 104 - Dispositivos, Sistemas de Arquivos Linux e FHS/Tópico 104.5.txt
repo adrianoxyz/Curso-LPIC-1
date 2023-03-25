@@ -31,6 +31,37 @@ chmod u+x nome.sh = Aqui estamos adicionando permissão de execução para user 
 ou
 chmod u=x nome.sh = Aqui estamos adicionando permissão de execução para user no arquivo nome.sh
 
+					Modo Octal
+
+
+r = 4
+w = 2
+x = 1
+
+rwx = 4 + 2 + 1 = 7
+rw = 4 + 2 = 6
+x = 1
+
+chmod 644 arquivo.out = rw-r--r--
+chmod 755 arquivo.out = rwxrwxr-
+
+chmod - R diretorio1 = Com o parâmetro -R ele aplica recursivamente a mesma permissão em todos os arquivos dentro do diretório e sub-diretórios.
+
+/etc/passwd = É um arquivo que contém informações de senhas dos usuários.
+
+passwd = Comando utilizado para alterar senha de usuários.
+
+sgid = é uma forma de executar um arquivo com as permissões de grupo daquele usuário utilizando o UID do grupo.
+
+suid = é uma propriedade do usuário, logo é possível executar um arquivo com as permissões do usuário utilizando o seu UID.
+
+sticky = é uma propriedade que torna elegível apagar ou renomear um arquivo somente por quem o criou.
+		por exemplo o diretório /tmp por padrão já tem o sticky, ou seja, só quem criou consegue
+			apagar ou renomear.
+		chmod o+t teste.txt = Aqui estamos setando o sticky para grupo "others" no arquivo teste.txt
+
+
+
 
 
 
