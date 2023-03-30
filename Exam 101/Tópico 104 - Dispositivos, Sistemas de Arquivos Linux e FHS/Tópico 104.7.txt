@@ -1,0 +1,42 @@
+					104.7 Padrão e Comandos para Localização de Arquivos - FHS
+
+FHS: FileSystem Hierarchy Standard é um padrão de localização de arquivos utilizado pela maioria das distribuições Linux.
+
+/bin: Programas críticos / Todos usuários
+
+/sbin: Programas críticos / SysAdmin
+
+/etc: Arquivos de configuração do sistema
+
+/lib: Bibliotecas e Módulos Kernel
+
+/mnt e /media: Pontos de montagem de media
+
+/proc e /sys: Informações de Hrdware e Processos
+
+/dev: Dispositivos e Arquivos especiais
+
+/root: Diretório padrão do usuário root.
+
+/boot: Arquivos de configuração do bootloader, imagens de kernel e initd.
+
+/tmp: Arquivos temporários
+
+/home: Diretório e Arquivos dos usuários
+
+/var: Arquivos dinâmicos como logs, filas, etc
+
+/usr: Instalação de programas dos Linux (Normalmente não críticos)
+
+/opt: Instalações de aplicações em geral
+
+
+find = Comando utilizado para realizar buscas dentro do sistema.
+	find /home -name Aula3= Aqui estamos buscando pelo nome "Aula3" dentro do /home.
+	find /home -size +10M = Aqui estamos buscando pelo tamanho maior que 10mb dentro do arquivo /home.
+
+locate = Comando de busca através de string passada dentro de sua database.
+		locate rpm = Aqui estamos buscando tudo que tem "rpm" dentro da database do locate.
+		updatedb = Comando utilizado para atualizar a base de dados do locate.
+
+whereis = Comando utilizado para localizar bibliotecas, fontes do sistema e etc. Não enconta arquivos de usuários.

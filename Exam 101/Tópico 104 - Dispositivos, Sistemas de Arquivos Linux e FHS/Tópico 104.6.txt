@@ -1,0 +1,23 @@
+						104.6 - Criando e Alterando Links Hard e Soft
+
+link físico ou hard link = É quando se cria um novo arquivo que aponta para o mesmo inode e qualquer alteração feita em um dos arquivos
+				altera o outro, é quando dois arquivos apontam para o mesmo volume de dado.
+			
+			ln script_exemplo.sh link_fisico = Aqui estamos criando um link fisico com o arquivo sh de origem.
+					
+
+* O link hard só pode ser criado dentro da mesma partição.
+* não pode ser criado link hard para diretórios.
+
+
+link simbólico = É quando um arquivo aponta para outro arquivo de origem.
+			ln -s Script_Exemplo.sh link-simbolico = Aqui estamos criando um link simbólico onde o arquivo aponta para o 								outro.
+
+* o link simbólico pode ser criado para diretório.
+
+
+
+
+
+
+

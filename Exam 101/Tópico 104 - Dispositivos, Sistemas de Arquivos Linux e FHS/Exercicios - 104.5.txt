@@ -1,0 +1,3 @@
+16. Configure o umask para que todo arquivo novo seja criado com as permissões: -rw-r-----
+	R = umask 640
+

@@ -60,8 +60,10 @@ sticky = é uma propriedade que torna elegível apagar ou renomear um arquivo so
 			apagar ou renomear.
 		chmod o+t teste.txt = Aqui estamos setando o sticky para grupo "others" no arquivo teste.txt
 
+umask = Máscara que define permissão que será colocada por padrão para novos arquivos e diretórios.
 
-
-
-
+chown = Comando utilizado para alterar dono e grupo de arquivo.
+		chown adriano aula3 = Aqui estamos atribuindo o usuário adriano como dono do arquivo aula3.
+		chown :suporte aula = Aqui estamos atribuindo o grupo suporte como dono do arquivo aula3.
+		chown -R adriano diretorio = Aqui estamos atribuindo de forma recursiva o usuario adriano como proprietário de tudo que 						está dentro do diretório.
 

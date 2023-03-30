@@ -1,0 +1,2 @@
+17 - No seu diretório home, crie um link simbólico chamado kernel-boot apontando para a imagem do kernel atual presente no diretório /boot
+	R = ln -s /home/boot kernel-boot
